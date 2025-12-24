@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>HUTECH Smart Logistics</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <div id="sidebar">
+        <div class="header-box">
+            <h2><i class="fa-solid fa-truck-fast"></i> HUTECH Logistics</h2>
+            <p class="subtitle">tối ưu lộ trình </p>
+        </div>
+
+        <div class="control-panel">
+            <div class="info-row">
+                <i class="fa-solid fa-warehouse"></i> 
+                <span>Kho: <b>475A Điện Biên Phủ</b></span>
+            </div>
+            
+            <div id="inputs">
+                <div class="input-group">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <input type="text" class="addr-input" placeholder="Nhập địa chỉ khách 1...">
+                </div>
+                <div class="input-group">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <input type="text" class="addr-input" placeholder="Nhập địa chỉ khách 2...">
+                </div>
+            </div>
+            
+            <button id="btn-add" class="btn-secondary">
+                <i class="fa-solid fa-plus"></i> Thêm điểm giao
+            </button>
+            
+            <button id="btn-calc" class="btn-primary">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Tối ưu lộ trình
+            </button>
+            
+            <div id="loading" class="loading">
+                <i class="fa-solid fa-circle-notch fa-spin"></i> Đang tính toán...
+            </div>
+            <button id="btn-google" class="btn-google" style="display: none;">
+                <i class="fa-solid fa-map-location-dot"></i> Mở trên Google Maps
+            </button>
+        </div>
+
+        <div id="result-box" class="stats-box" style="display:none;">
+            <h3><i class="fa-solid fa-chart-pie"></i> Tổng quan</h3>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="label">Quãng đường</span>
+                    <b id="val-km" class="value text-blue">0 km</b>
+                </div>
+                <div class="stat-item">
+                    <span class="label">Nhiên liệu</span>
+                    <b id="val-fuel" class="value text-orange">0 L</b>
+                </div>
+                <div class="stat-item">
+                    <span class="label">Thời gian</span>
+                    <b id="val-time" class="value text-green">0 p</b>
+                </div>
+            </div>
+            <hr>
+            <div class="logs-container">
+                <h4>Lộ trình chi tiết:</h4>
+                <div id="route-logs"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

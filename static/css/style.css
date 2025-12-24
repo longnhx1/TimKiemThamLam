@@ -1,0 +1,115 @@
+/* Reset cơ bản */
+* { box-sizing: border-box; }
+body { 
+    font-family: 'Inter', sans-serif; 
+    margin: 0; padding: 0; 
+    display: flex; height: 100vh; 
+    color: #333;
+}
+
+/* Sidebar bên trái - Sang trọng hơn */
+#sidebar { 
+    width: 380px; 
+    background: #ffffff; 
+    padding: 25px; 
+    box-shadow: 4px 0 20px rgba(0,0,0,0.08); 
+    display: flex; 
+    flex-direction: column; 
+    z-index: 1000; /* Nổi lên trên bản đồ */
+    overflow-y: auto;
+}
+
+/* Header */
+.header-box { margin-bottom: 25px; border-bottom: 2px solid #f0f2f5; padding-bottom: 15px; }
+h2 { margin: 0; color: #1a202c; font-size: 22px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+h2 i { color: #007bff; }
+.subtitle { margin: 5px 0 0; color: #718096; font-size: 14px; }
+
+/* Các ô nhập liệu */
+.control-panel { display: flex; flex-direction: column; gap: 12px; }
+.info-row { font-size: 14px; color: #4a5568; margin-bottom: 5px; display: flex; align-items: center; gap: 8px; }
+.input-group { position: relative; }
+.input-group i { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: #a0aec0; }
+.addr-input { 
+    width: 100%; 
+    padding: 12px 12px 12px 35px; /* Chừa chỗ cho icon */
+    border: 1px solid #e2e8f0; 
+    border-radius: 8px; 
+    font-size: 14px;
+    transition: all 0.2s;
+}
+.addr-input:focus { border-color: #007bff; outline: none; box-shadow: 0 0 0 3px rgba(0,123,255,0.1); }
+
+/* Nút bấm - Gradient & Hiệu ứng */
+button { 
+    width: 100%; padding: 12px; border: none; cursor: pointer; 
+    border-radius: 8px; font-weight: 600; font-size: 14px;
+    transition: transform 0.1s, box-shadow 0.2s;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+button:active { transform: scale(0.98); }
+
+.btn-primary { 
+    background: linear-gradient(135deg, #007bff, #0056b3); 
+    color: white; 
+    box-shadow: 0 4px 6px rgba(0,123,255,0.2);
+}
+.btn-primary:hover { background: linear-gradient(135deg, #0056b3, #004494); }
+
+.btn-secondary { 
+    background: #f7fafc; color: #4a5568; border: 1px solid #e2e8f0; 
+}
+.btn-secondary:hover { background: #edf2f7; color: #2d3748; }
+
+/* Loading */
+.loading { 
+    color: #d69e2e; font-weight: 600; font-size: 14px; 
+    display: none; text-align: center; margin-top: 10px; 
+}
+
+/* Phần Kết quả */
+.stats-box { 
+    background: #f8f9fa; 
+    padding: 20px; 
+    border-radius: 12px; 
+    margin-top: 25px; 
+    border: 1px solid #e9ecef;
+}
+.stats-box h3 { font-size: 16px; margin-top: 0; display: flex; align-items: center; gap: 8px; }
+.stats-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-top: 15px; }
+.stat-item { background: white; padding: 10px; border-radius: 8px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.03); }
+.stat-item .label { display: block; font-size: 11px; color: #718096; text-transform: uppercase; }
+.stat-item .value { font-size: 15px; display: block; margin-top: 4px; }
+
+/* Màu chữ kết quả */
+.text-blue { color: #3182ce; }
+.text-orange { color: #dd6b20; }
+.text-green { color: #38a169; }
+
+/* Logs lộ trình */
+.logs-container h4 { margin: 15px 0 10px; font-size: 14px; color: #4a5568; }
+.log-item { 
+    padding: 8px 12px; 
+    background: white; 
+    border-radius: 6px; 
+    margin-bottom: 6px; 
+    font-size: 13px; 
+    border-left: 3px solid #cbd5e0;
+    display: flex; align-items: center;
+}
+.log-item:first-child { border-left-color: #e53e3e; } /* Điểm kho màu đỏ */
+
+/* Bản đồ */
+#map { flex: 1; height: 100%; }
+
+/* Nút Google Maps */
+.btn-google {
+    background: linear-gradient(135deg, #34a853, #2e8b57); /* Màu xanh Google */
+    color: white;
+    margin-top: 10px;
+    box-shadow: 0 4px 6px rgba(52, 168, 83, 0.2);
+}
+
+.btn-google:hover {
+    background: linear-gradient(135deg, #2e8b57, #246d44);
+}
